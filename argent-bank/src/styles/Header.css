@@ -29,6 +29,8 @@
 }
 
 .main-nav-item {
+  display: flex;
+  gap: 5px;
   text-decoration: none;
   margin-right: 0.5rem;
 }

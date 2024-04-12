@@ -8,7 +8,7 @@ export default function Signin() {
   return (
     <body>
       <Header />
-      <Link to="/User">Signin</Link>
+      <Link to="/User"> Signin </Link>
       <Footer />
     </body>
   );

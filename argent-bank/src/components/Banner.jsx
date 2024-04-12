@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../styles/footer.css";
+import "../styles/banner.css";
 
 export function Banner() {
   return (

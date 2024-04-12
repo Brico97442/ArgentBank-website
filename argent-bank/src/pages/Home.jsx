@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <body>
       <Header />
-      <Banner/>
+      <Banner />
       <Footer />
     </body>
   );

@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import "../styles/index.css";
+import "../styles/header.css";
 import image from "../img/argentBankLogo.png";
+
 export function Header() {
   return (
     <div className="header">
