@@ -4,10 +4,10 @@ import Footer from "../components/Footer";
 
 export default function User() {
   return (
-    <div>
+    <body>
       <Header />
       <p>User</p>
       <Footer />
-    </div>
+    </body>
   );
 }

@@ -6,10 +6,10 @@ import Footer from "../components/Footer";
 
 export default function Signin() {
   return (
-    <div>
+    <body>
       <Header />
       <Link to="/User">Signin</Link>
       <Footer />
-    </div>
+    </body>
   );
 }
