@@ -5,10 +5,12 @@ import Banner from "../components/Banner";
 
 export default function Home() {
   return (
-    <body>
+    <>
       <Header />
-      <Banner />
+      <main>
+        <Banner />
+      </main>
       <Footer />
-    </body>
+    </>
   );
 }

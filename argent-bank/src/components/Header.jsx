@@ -6,7 +6,7 @@ import image from "../img/argentBankLogo.png";
 
 export function Header() {
   return (
-    <div className="header">
+    <header className="header">
       <nav className="main-nav">
         <Link className="main-nav-logo" to="/">
           <img
@@ -23,7 +23,7 @@ export function Header() {
           </Link>
         </div>
       </nav>
-    </div>
+    </header>
   );
 }
 export default Header;
