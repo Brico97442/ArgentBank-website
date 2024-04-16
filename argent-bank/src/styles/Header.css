@@ -43,6 +43,11 @@
   font-size: 16px;
 }
 
+.flex-baseline {
+  display: flex;
+  align-items: baseline;
+  }
+
 .block {
   display: block;
 }

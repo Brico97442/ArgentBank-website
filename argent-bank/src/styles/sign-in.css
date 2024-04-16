@@ -24,6 +24,10 @@
     margin-top: 3rem;
     padding: 2rem;
 }
+
+.sign-in-content .main-nav-item {
+    margin: 0 auto;
+}
   
 .sign-in-icon {
     font-size: 5rem;
@@ -32,12 +36,8 @@
 .main-nav-item {
     gap: 5px;
     text-decoration: none;
-    margin-right: 0.5rem;
     font-size: 16px;
 }
 
-.flex-baseline {
-display: flex;
-align-items: baseline;
-}
+
 
