@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import "../styles/header.css";
-import image from "../img/argentBankLogo.png";
+import picture from "../img/argentBankLogo.png";
+import SigninItem from "./Sign-in-item";
 
 export function Header() {
   return (
@@ -12,16 +13,13 @@ export function Header() {
           <img
             className="main-nav-logo-image"
             alt="Argent Bank Logo"
-            src={image}
+            src={picture}
           />
           <h1 className="sr-only">Argent Bank</h1>
         </Link>
-        <div>
-          <Link className="main-nav-item" to="/sign-in">
-            <i className="fa fa-user-circle"></i>
-            Sign In
-          </Link>
-        </div>
+        <Link className="main-nav-item flex" to="/sign-in">
+          <SigninItem />
+        </Link>
       </nav>
     </header>
   );

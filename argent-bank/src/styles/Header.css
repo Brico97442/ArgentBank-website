@@ -19,9 +19,14 @@
   padding: 5px 20px;
 }
 
+.main-nav p {
+  margin: 0;
+}
+
 .main-nav a {
   font-weight: bold;
   color: #2c3e50;
+  text-decoration: none;
 }
 
 .main-nav a.router-link-exact-active {
@@ -29,10 +34,13 @@
 }
 
 .main-nav-item {
-  display: flex;
   gap: 5px;
   text-decoration: none;
   margin-right: 0.5rem;
+}
+
+.block {
+  display: block;
 }
 
 .main-nav-item:hover {
