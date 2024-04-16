@@ -23,8 +23,6 @@ body {
   flex: 1;
 }
 
-
-
 .features {
   display: flex;
   flex-direction: column;

@@ -17,8 +17,8 @@ export function Header() {
           />
           <h1 className="sr-only">Argent Bank</h1>
         </Link>
-        <Link className="main-nav-item flex" to="/sign-in">
-          <SigninItem />
+        <Link className="main-nav-item flex-baseline" to="/sign-in">
+          <SigninItem className="sixteen-pixels"/>
         </Link>
       </nav>
     </header>
