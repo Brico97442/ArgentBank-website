@@ -1,8 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
+import { Provider } from "react-redux";
 import reportWebVitals from "./reportWebVitals";
+import store from "./redux/Store";
 
 import Home from "./pages/Home";
 import Signin from "./pages/Sign-in";
@@ -10,21 +11,18 @@ import User from "./pages/User";
 
 import "./styles/index.css";
 
-
-
-
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Router>
+    <Provider store={store}>
+      <Router>
         <Routes>
           <Route exact path="/" element={<Home />}></Route>
           <Route path="/sign-in" element={<Signin />}></Route>
           <Route path="/user" element={<User />}></Route>
         </Routes>
       </Router>
-      
+    </Provider>
   </React.StrictMode>
 );
 
