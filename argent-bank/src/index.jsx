@@ -1,10 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Provider } from "react-redux";
-import { configureStore } from "@reduxjs/toolkit";
-import rootReducer from "./redux/reducers"
-import { postUser } from "./redux/actions/user.action";
+
 import reportWebVitals from "./reportWebVitals";
 
 import Home from "./pages/Home";
@@ -13,17 +10,13 @@ import User from "./pages/User";
 
 import "./styles/index.css";
 
-const store = configureStore({
-  reducer: rootReducer,
-  devTools: "true", 
-})
 
-store.dispatch(postUser())
+
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Provider store={store} >
     <Router>
         <Routes>
           <Route exact path="/" element={<Home />}></Route>
@@ -31,7 +24,7 @@ root.render(
           <Route path="/user" element={<User />}></Route>
         </Routes>
       </Router>
-      </Provider>
+      
   </React.StrictMode>
 );
 
