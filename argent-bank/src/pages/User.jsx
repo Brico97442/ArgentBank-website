@@ -32,7 +32,7 @@ export function User() {
           <p className="account-amount-description">Available Balance</p>
         </div>
         <div className="account-content-wrapper cta">
-          <button className="transaction-button">View transactions</button>
+        <Button content="View transactions" btnClass="transaction-button"/>
         </div>
       </section>
       <section className="account">
@@ -42,7 +42,7 @@ export function User() {
           <p className="account-amount-description">Current Balance</p>
         </div>
         <div className="account-content-wrapper cta">
-          <button className="transaction-button">View transactions</button>
+        <Button content="View transactions" btnClass="transaction-button"/>
         </div>
       </section>
       </main>
