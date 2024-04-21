@@ -39,7 +39,8 @@ export function LoginForm() {
         dispatch(setSignIn({ token })); // envoie action au store (user connecté)
         redirection("/User"); // redirection
       } else {
-        setErrorMessage(response.statusText); // màj message erreur
+        const errorResponseData = response.data;
+        setErrorMessage(errorResponseData.message); // màj message erreur
       }
     } catch {
       //* Gestion erreurs imprévues
