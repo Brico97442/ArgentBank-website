@@ -22,7 +22,7 @@ import { createSlice } from "@reduxjs/toolkit";
 //   }
 // );
 
-const userProfileSlice = createSlice({
+const userprofileSlice = createSlice({
   name: "user",
   initialState: {
     firstName: "",
@@ -38,12 +38,12 @@ const userProfileSlice = createSlice({
       state.userName = action.payload.body.userName
       state.email = action.payload.body.email
     },
-    changeUserName: (state,action) =>{
+    ChangeUserName: (state,action) =>{
       state.userName = action.payload
     },
   },
 });
 
 
-export const { setProfile, changeUserName } = userProfileSlice.actions
-export default userProfileSlice.reducer;
+export const { setProfile, changeUserName } = userprofileSlice.actions
+export default userprofileSlice.reducer;
