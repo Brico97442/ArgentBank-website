@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const userprofileSlice = createSlice({
   name: "user",
+
   initialState: {
     firstName: "",
     lastName: "",
@@ -11,13 +12,13 @@ const userprofileSlice = createSlice({
   },
 
   reducers: {
-    SetProfile: (state, action) => {
+    setProfile: (state, action) => {
       state.firstName = action.payload.body.fisrtName
       state.lastName = action.payload.body.lastName
       state.userName = action.payload.body.userName
       state.email = action.payload.body.email
     },
-    ChangeUserName: (state,action) =>{
+    changeUserName: (state,action) =>{
       state.userName = action.payload
     },
   },

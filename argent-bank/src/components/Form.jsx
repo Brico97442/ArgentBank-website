@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch , useSelector} from "react-redux";
 import axios from "axios";
 import Button from "./Button";
 import "../styles/index.css";
@@ -14,6 +14,7 @@ export function LoginForm() {
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [remember, setRemember] = useState(false);
+  const userProfile = useSelector((state) => state.user);
 
   const submit = async (event) => {
     event.preventDefault();
@@ -49,6 +50,7 @@ export function LoginForm() {
   };
   return (
     <form onSubmit={submit}>
+      
       {errorMessage && <p className="error-login">{errorMessage}</p>}
       <div className="input-wrapper">
         <label htmlFor="username">Username</label>
@@ -79,7 +81,6 @@ export function LoginForm() {
           checked={remember}
         />
       </div>
-
       <Button content="Sign In" btnClass="sign-in-button" />
     </form>
   );

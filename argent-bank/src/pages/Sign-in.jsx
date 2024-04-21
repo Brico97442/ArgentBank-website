@@ -15,7 +15,7 @@ export default function Signin() {
       <main className="main bg-dark">
         <section className="sign-in-content">
           <div className="main-nav-item ">
-            <SigninItem />
+            <SigninItem/>
           </div>
           <Form />
         </section>
