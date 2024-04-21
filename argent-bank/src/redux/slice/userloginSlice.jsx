@@ -17,7 +17,7 @@ const loginSlice = createSlice({
     setSignIn(state, action) {
       state.token = action.payload.token; // màj token
       state.isConnected = true;
-      localStorage.getItem("localStorage authToken", state.token);
+      localStorage.getItem("localStorage loginToken", state.token);
     },
     // foncion pour la déconnexion
     setSignOut(state) {
