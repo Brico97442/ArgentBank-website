@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const getToken = () => {
   return localStorage.getItem("loginToken") || null; //stock le token sous le nom de login token 
 };
+
 const initialState = {
   token: getToken(), //  Initialise token par défault avec valeur getToken()
   isConnected: false, // Initialise que l'utilisateur n'est pas connecté par défaut 
