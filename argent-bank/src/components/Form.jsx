@@ -14,10 +14,12 @@ export function LoginForm() {
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [remember, setRemember] = useState(false);
-  const userProfile = useSelector((state) => state.user);
+  
+  
 
   const submit = async (event) => {
     event.preventDefault();
+    
     const formData = {
       email: email,
       password: password,
@@ -36,7 +38,7 @@ export function LoginForm() {
       if (response.status === 200) {
         const responseData = response.data; // récup données
         const token = responseData.body.token; // extract token auth
-        localStorage.setItem("authToken", token); // save token
+        // save token
         dispatch(setSignIn({ token })); // envoie action au store (user connecté)
         redirection("/User"); // redirection
       } else {

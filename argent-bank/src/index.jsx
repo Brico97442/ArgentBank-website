@@ -19,7 +19,7 @@ root.render(
         <Routes>
           <Route exact path="/" element={<Home />}></Route>
           <Route path="/sign-in" element={<Signin />}></Route>
-          <Route path="/user" element={<User />}></Route>
+          <Route path="/user" element={<User/>}></Route>
         </Routes>
       </Router>
     </Provider>
