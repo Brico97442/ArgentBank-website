@@ -7,7 +7,8 @@ import SigninItem from "./Sign-in-item";
 import { setSignIn, setSignOut } from "../redux/slice/userloginSlice";
 
 export function Header() {
-  const userProfile = useSelector((state) => state.login.isConnected);
+  const userConnected = useSelector((state) => state.login.isConnected);
+  const token = useSelector((state) => state.login.token);
 
   const dispatch = useDispatch(); // màj valeur
 
@@ -17,11 +18,10 @@ export function Header() {
   };
 
   useEffect(() => {
-    const token = localStorage.getItem("loginToken");
     if (token) {
       dispatch(setSignIn({ token })); // connecter l'utilisateur
     }
-  }, [dispatch]);
+  }, [dispatch,token]);
 
   return (
     <header className="header">
@@ -34,7 +34,7 @@ export function Header() {
           />
           <h1 className="sr-only">Argent Bank</h1>
         </Link>
-        {userProfile ? (
+        {userConnected ? (
           <>
             <Link to="/User" className="main-nav-item flex-baseline">
               <SigninItem className="sixteen-pixels" />

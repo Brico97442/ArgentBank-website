@@ -23,6 +23,7 @@ const userprofileSlice = createSlice({
     changeUserName: (state,action) =>{
       state.userName = action.payload
     },
+    
   },
 });
 

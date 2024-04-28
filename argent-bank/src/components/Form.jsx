@@ -1,58 +1,31 @@
+// LoginForm.js
+
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { useDispatch , useSelector} from "react-redux";
-import axios from "axios";
+import { useDispatch } from "react-redux";
+import { login } from "../redux/actions/loginActions";
 import Button from "./Button";
 import "../styles/index.css";
-import { setSignIn } from "../redux/slice/userloginSlice";
 
 export function LoginForm() {
-  const redirection = useNavigate();
   const dispatch = useDispatch();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [remember, setRemember] = useState(false);
-  
-  
 
   const submit = async (event) => {
     event.preventDefault();
-    
-    const formData = {
-      email: email,
-      password: password,
-    };
-    //* Envoie requête vers API pour connexion
     try {
-      const response = await axios.post(
-        "http://localhost:3001/api/v1/user/login",
-        formData,
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-      if (response.status === 200) {
-        const responseData = response.data; // récup données
-        const token = responseData.body.token; // extract token auth
-        // save token
-        dispatch(setSignIn({ token })); // envoie action au store (user connecté)
-        redirection("/User"); // redirection
-      } else {
-        const errorResponseData = response.data;
-        setErrorMessage(errorResponseData.message); // màj message erreur
-      }
-    } catch {
-      //* Gestion erreurs imprévues
-      setErrorMessage("An error as occured."); // màj message erreur
+      // Appel de l'action login avec l'email, le mot de passe et l'URL de redirection
+      await dispatch(login(email, password, "/User"));
+    } catch (error) {
+      setErrorMessage(error.message);
     }
   };
+
   return (
     <form onSubmit={submit}>
-      
       {errorMessage && <p className="error-login">{errorMessage}</p>}
       <div className="input-wrapper">
         <label htmlFor="username">Username</label>
@@ -87,4 +60,5 @@ export function LoginForm() {
     </form>
   );
 }
+
 export default LoginForm;

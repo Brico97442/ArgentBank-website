@@ -1,23 +1,24 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  token: null, //  Initialise token par défault avec valeur getToken()
-  isConnected: false, // Initialise que l'utilisateur n'est pas connecté par défaut 
+  token: null,
+  isConnected: false, 
 }; 
 
 const loginSlice = createSlice({
   name: "login",
   initialState,
+  
   reducers: {
-    // fonction pour connexion
+    // utilisateur connecté 
     setSignIn(state, action) {
-      state.token = action.payload.token; // màj token
       state.isConnected = true;
+      state.token = action.payload.token; // màj token
     },
-    // foncion pour la déconnexion
+    // déconnexion
     setSignOut(state) {
-      state.token = null; 
       state.isConnected = false;
+      state.token = null; 
     },
   },
 });

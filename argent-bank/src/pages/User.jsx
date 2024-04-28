@@ -12,7 +12,7 @@ export function User() {
       <Header />
       <main className="main bg-dark">
       <div className="edit-user-modal">
-        <h1>Welcome back<br />Tony Jarvis!</h1>
+        <h1>Welcome back<br/>Tony Jarvis!</h1>
         <button className="edit-button">Edit Name</button>
       </div>
       <section className="account">
