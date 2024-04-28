@@ -1,13 +1,16 @@
 // LoginForm.js
 
-import React, { useState } from "react";
+import React, { useState} from "react";
 import { useDispatch } from "react-redux";
 import { login } from "../redux/actions/loginActions";
+import { useNavigate } from "react-router-dom";
+
 import Button from "./Button";
 import "../styles/index.css";
 
 export function LoginForm() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -19,6 +22,9 @@ export function LoginForm() {
     try {
       // Appel de l'action login avec l'email, le mot de passe et l'URL de redirection
       await dispatch(login(email, password, "/User"));
+      
+      navigate("/User"); //Redirection de l'utilisateur vers la page user 
+
     } catch (error) {
       setErrorMessage(error.message);
     }
