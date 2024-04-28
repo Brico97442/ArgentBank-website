@@ -8,7 +8,7 @@ import { setSignIn, setSignOut } from "../redux/slice/userloginSlice";
 
 export function Header() {
   const userConnected = useSelector((state) => state.login.isConnected);
-  const token = useSelector((state) => state.login.token);
+  const token = useSelector((state) => state.login.token);    // Utilisation de useSelector pour récupérer le State du token dans redux 
 
   const dispatch = useDispatch(); // màj valeur
 
