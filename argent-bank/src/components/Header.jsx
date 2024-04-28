@@ -8,9 +8,9 @@ import { setSignIn, setSignOut } from "../redux/slice/userloginSlice";
 
 export function Header() {
   const userConnected = useSelector((state) => state.login.isConnected);
+  const dispatch = useDispatch(); // màj valeur
   const token = useSelector((state) => state.login.token);    // Utilisation de useSelector pour récupérer le State du token dans redux 
 
-  const dispatch = useDispatch(); // màj valeur
 
   //* Deconnection utilisateur
   const userSignOut = () => {
@@ -35,7 +35,7 @@ export function Header() {
           <h1 className="sr-only">Argent Bank</h1>
         </Link>
         {userConnected ? (
-          <>
+          <div className="nav-items">
             <Link to="/User" className="main-nav-item flex-baseline">
               <SigninItem className="sixteen-pixels" />
             </Link>
@@ -47,7 +47,7 @@ export function Header() {
               <i className="fa fa-sign-out icon-header"></i>
               Sign Out
             </Link>
-          </>
+          </div>
         ) : (
           <Link to="/Sign-in" className="main-nav-item flex-baseline">
             <SigninItem className="sixteen-pixels" />

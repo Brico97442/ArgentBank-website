@@ -12,6 +12,12 @@
   white-space: nowrap !important; /* 3 */
 }
 
+.nav-items {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .main-nav {
   display: flex;
   justify-content: space-between;

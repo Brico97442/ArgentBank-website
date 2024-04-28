@@ -2,9 +2,9 @@ import React from "react";
 
 import "../styles/banner.css";
 
-export function Button({content,btnClass}) {
+export function Button({content,btnClass,event,onClick}) {
   return (
-    <button type="submit" className={btnClass}>
+    <button type="submit" className={btnClass} onClick={onClick} event={event}>
         {content}
     </button>
   );

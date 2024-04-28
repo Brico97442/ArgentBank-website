@@ -1,18 +1,19 @@
 import React from "react";
 import { useSelector } from "react-redux";
-
 import "../styles/sign-in-item.css";
 import "../styles/index.css";
 
 export default function SigninItem({ className }) {
-  // Accéder à l'état d'authentification depuis le store Redux
-  const isConnected = useSelector((state) => state.login.isConnected);
+  
+  const isConnected = useSelector((state) => state.login.isConnected);    // Accéder à l'état d'authentification depuis le store Redux
+  const userProfile = useSelector((state) => state.user)
+  // const firstName = userProfile.firstName
 
   return (
     <>
       <i className="fa fa-user-circle"></i>
-      {/* Afficher "Logout" si l'utilisateur est connecté, sinon afficher "Sign In" */}
-      <h1 className={className}>{isConnected ? "Logout" : "Sign In"}</h1>
+      
+      <h1 className={className}>{isConnected ? "Le nom doit apparaitre ici" : "Sign In"}</h1>
     </>
   );
 }

@@ -2,7 +2,7 @@
 import axios from "axios";
 import { setSignIn } from "../slice/userloginSlice";
 
-export const login = (email, password, redirectTo) => {
+export const login = (email, password) => {
   return async (dispatch) => {
     const formData = {
       email: email,
@@ -22,7 +22,6 @@ export const login = (email, password, redirectTo) => {
         const responseData = response.data;
         const token = responseData.body.token;
         dispatch(setSignIn({ token }));
-        // Redirection après la connexion
         
       } else {
         const errorMessage = response.data;

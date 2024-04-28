@@ -5,16 +5,13 @@ import Footer from "../components/Footer";
 import Button from "../components/Button";
 import "../styles/index.css"
 import "../styles/transactions.css"
-
+import Editname from "../components/Edit-name-form";
 export function User() {
   return (
     <>
       <Header />
       <main className="main bg-dark">
-      <div className="edit-user-modal">
-        <h1>Welcome back<br/>Tony Jarvis!</h1>
-        <button className="edit-button">Edit Name</button>
-      </div>
+      <Editname/>
       <section className="account">
         <div className="account-content-wrapper">
           <h3 className="account-title">Argent Bank Checking (x8349)</h3>

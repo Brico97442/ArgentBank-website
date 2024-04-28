@@ -20,10 +20,9 @@ export function LoginForm() {
   const submit = async (event) => {
     event.preventDefault();
     try {
-      // Appel de l'action login avec l'email, le mot de passe et l'URL de redirection
-      await dispatch(login(email, password, "/User"));
       
-      navigate("/User"); //Redirection de l'utilisateur vers la page user 
+      await dispatch(login(email, password, "/User")); // Appel de l'action login avec l'email, le mot de passe et l'URL de redirection
+      navigate("/User");                              //Redirection de l'utilisateur vers la page user 
 
     } catch (error) {
       setErrorMessage(error.message);

@@ -77,6 +77,13 @@ body {
   font-size: 1.2rem;
 }
 
+.modal{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
 .footer {
   display: flex;
   justify-content: center;
