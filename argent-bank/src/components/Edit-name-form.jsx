@@ -25,7 +25,7 @@ function EditName() {
           <h1>
             Welcome back
             <br />
-            {userProfile.firstName} {userProfile.lastName}
+            {userProfile.userName} 
           </h1>
           <Button
             content="Edit Name"
@@ -72,7 +72,12 @@ function EditName() {
                 />
               </div>
               <div className="button-wrapper">
-                <Button content="Save" width="88px" height="40px" type="submit" />
+                <Button
+                  content="Save"
+                  width="88px"
+                  height="40px"
+                  type="submit"
+                />
                 <Button
                   content="Cancel"
                   onClick={() => {

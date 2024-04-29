@@ -1,8 +1,9 @@
 import axios from "axios";
-import { setProfile , changeUserName } from "../slice/userprofileSlice";
+import { setProfile, changeUserName } from "../slice/userprofileSlice";
 
 export const fetchProfileData = () => {
-  return async (dispatch, getState) => { // Utilisez getState pour accéder à l'état Redux
+  return async (dispatch, getState) => {
+    // Utilisez getState pour accéder à l'état Redux
     const { token } = getState().login; // Accédez au token dans l'état login
     try {
       const response = await axios.post(
@@ -57,7 +58,3 @@ export const updateUserProfile = (editedUserName, userToken) => {
     }
   };
 };
-
-
-
-
