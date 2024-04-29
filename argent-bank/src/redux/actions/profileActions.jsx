@@ -1,46 +1,29 @@
 import axios from "axios";
-import { setProfile } from "../slice/UserProfileSlice";
+import { setProfile } from "../slice/userprofileSlice";
 
-export const user = (
-  firstName,
-  lastName,
-  userName,
-  email,
-  password,
-  authToken
-) => {
-  return async (dispatch) => {
-    const profileData = {
-      email: email,
-      password: password,
-      firstName: firstName,
-      lastName: lastName,
-      userName: userName,
-    };
-
+export const fetchProfileData = () => {
+  return async (dispatch, getState) => { // Utilisez getState pour accéder à l'état Redux
+    const { token } = getState().login; // Accédez au token dans l'état login
     try {
       const response = await axios.post(
-        "http://localhost:3001/api/v1/user/signup",
-        profileData,
+        "http://localhost:3001/api/v1/user/profile",
+        {},
         {
           headers: {
             accept: "application/json",
             "Content-Type": "application/json",
-            Authorization: `Bearer ${authToken}`,
+            Authorization: `Bearer ${token}`,
           },
         }
       );
       if (response.status === 200) {
         const responseData = response.data;
-        dispatch(setProfile(responseData)); // màj valeur + déclenche rendu
-        console.log(responseData);
-        // Redirection après la connexion
+        dispatch(setProfile(responseData)); // Met à jour la valeur et déclenche le rendu
       } else {
-        const errorMessage = response.data;
-        throw new Error(errorMessage.message);
+        console.error("Error response: ", response.statusText);
       }
     } catch (error) {
-      throw new Error("An error has occurred.");
+      console.error("Error: ", error);
     }
   };
 };

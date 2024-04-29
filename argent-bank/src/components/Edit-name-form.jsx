@@ -1,13 +1,10 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import Button from "./Button.jsx";
 import "../styles/index.css";
 
-
-
 function EditName() {
   const userProfile = useSelector((state) => state.user); // récup données user
-
   const [isOpen, setIsOpen] = useState(false); // form fermé par défaut
 
   return (
@@ -18,14 +15,8 @@ function EditName() {
           <h1>
             Welcome back
             <br />
-            {!userProfile.userName ? (
-              <>
-                {userProfile.firstName} {userProfile.lastName}
-              </>
-            ) : (
-              <>{userProfile.userName} </>
-            )}
-            le nom doit apparaitre ici 
+            <>{userProfile.userName} </>
+            le nom doit apparaitre ici
           </h1>
           <Button
             content="Edit Name"
@@ -42,32 +33,36 @@ function EditName() {
             <form>
               <div className="input-wrapper">
                 <label htmlFor="username">Username</label>
+                <input content="username" type="text" required id="username" />
+              </div>
+              <div className="input-wrapper">
+                <label htmlFor="firstname">First name</label>
                 <input
-                  content="email"
-                  type="email"
+                  content="firsname"
+                  type="text"
                   required
-                  id="username"
-                  
+                  id="firstname"
                 />
               </div>
               <div className="input-wrapper">
-                <label htmlFor="password">Password</label>
+                <label htmlFor="lastname">Last name</label>
                 <input
-                  content="password"
-                  type="password"
+                  content="lastname"
+                  type="text"
                   required
-                  id="password"
-                  
+                  id="lastname"
                 />
               </div>
-              <Button content="Save" width="88px" height="40px" />
+              <div className="button-wrapper">
+                <Button content="Save" width="88px" height="40px" />
+                <Button
+                  content="Cancel"
+                  onClick={() => {
+                    setIsOpen(false);
+                  }}
+                />
+              </div>
             </form>
-            <Button
-              content="Cancel"
-              onClick={() => {
-                setIsOpen(false);
-              }}
-            />
           </div>
         </>
       )}

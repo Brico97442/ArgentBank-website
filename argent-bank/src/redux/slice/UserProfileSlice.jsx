@@ -12,9 +12,8 @@ const userprofileSlice = createSlice({
   },
 
   reducers: {
-    
     setProfile: (state, action) => {
-      state.firstName = action.payload.body.fisrtName
+      state.firstName = action.payload.body.firstName
       state.lastName = action.payload.body.lastName
       state.userName = action.payload.body.userName
       state.email = action.payload.body.email

@@ -22,7 +22,6 @@ export const login = (email, password) => {
         const responseData = response.data;
         const token = responseData.body.token;
         dispatch(setSignIn({ token }));
-        
       } else {
         const errorMessage = response.data;
         throw new Error(errorMessage.message);

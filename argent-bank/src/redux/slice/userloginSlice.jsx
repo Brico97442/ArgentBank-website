@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   token: null,
-  isConnected: false, 
+  isConnected: false,
 }; 
 
 const loginSlice = createSlice({
