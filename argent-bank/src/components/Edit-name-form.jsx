@@ -1,22 +1,31 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Button from "./Button.jsx";
 import "../styles/index.css";
+import { updateUserProfile } from "../redux/actions/profileActions.jsx";
 
 function EditName() {
-  const userProfile = useSelector((state) => state.user); // récup données user
-  const [isOpen, setIsOpen] = useState(false); // form fermé par défaut
+  const dispatch = useDispatch();
+  const userProfile = useSelector((state) => state.user);
+  const userToken = useSelector((state) => state.login.token); // Déplacez cette ligne ici
+
+  const [isOpen, setIsOpen] = useState(false);
+  const [newUsername, setNewUsername] = useState(userProfile.userName);
+
+  const saveChange = (event) => {
+    event.preventDefault();
+    dispatch(updateUserProfile(newUsername, userToken)); // Utilisez le token d'authentification ici
+    setIsOpen(false);
+  };
 
   return (
     <section className="edit-user-modal">
       {!isOpen ? (
-        //* Mode édition désactivé
         <>
           <h1>
             Welcome back
             <br />
-            <>{userProfile.userName} </>
-            le nom doit apparaitre ici
+            {userProfile.firstName} {userProfile.lastName}
           </h1>
           <Button
             content="Edit Name"
@@ -30,18 +39,26 @@ function EditName() {
         <>
           <h1 className="title-user">Edit user info</h1>
           <div className="modal">
-            <form>
+            <form onSubmit={saveChange}>
               <div className="input-wrapper">
                 <label htmlFor="username">Username</label>
-                <input content="username" type="text" required id="username" />
+                <input
+                  content="username"
+                  type="text"
+                  required
+                  id="username"
+                  value={newUsername}
+                  onChange={(e) => setNewUsername(e.target.value)}
+                />
               </div>
               <div className="input-wrapper">
                 <label htmlFor="firstname">First name</label>
                 <input
                   content="firsname"
                   type="text"
-                  required
                   id="firstname"
+                  disabled
+                  value={userProfile.firstName}
                 />
               </div>
               <div className="input-wrapper">
@@ -49,12 +66,13 @@ function EditName() {
                 <input
                   content="lastname"
                   type="text"
-                  required
                   id="lastname"
+                  disabled
+                  value={userProfile.lastName}
                 />
               </div>
               <div className="button-wrapper">
-                <Button content="Save" width="88px" height="40px" />
+                <Button content="Save" width="88px" height="40px" type="submit" />
                 <Button
                   content="Cancel"
                   onClick={() => {
