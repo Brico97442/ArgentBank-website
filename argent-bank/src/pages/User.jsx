@@ -3,8 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchProfileData } from "../redux/actions/profileActions";
 import Editnameform from "../components/Edit-name-form";
 
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import Button from "../components/Button";
 import "../styles/index.css";
 import "../styles/transactions.css";
@@ -21,7 +19,6 @@ export function User() {
   
   return (
     <>
-      <Header />
       <main className="main bg-dark">
         <Editnameform />
         <section className="account">
@@ -55,7 +52,6 @@ export function User() {
           </div>
         </section>
       </main>
-      <Footer />
     </>
   );
 }
