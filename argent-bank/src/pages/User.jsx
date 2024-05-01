@@ -11,13 +11,14 @@ import "../styles/transactions.css";
 
 export function User() {
   const dispatch = useDispatch();
-  const token = useSelector((state) => state.login.token); // Récupérer le token du store Redux
+  const userConnected = useSelector((state) => state.login.isConnected); // Récupérer l'état connecté dans le store Redux
+  
   useEffect(() => {
-    if (token) {
+    if (userConnected) {
       dispatch(fetchProfileData()); // Appel de la fonction d'action pour récupérer les données de profil
     }
-  }, [dispatch, token]);
-
+  }, [dispatch ,userConnected]);
+  
   return (
     <>
       <Header />

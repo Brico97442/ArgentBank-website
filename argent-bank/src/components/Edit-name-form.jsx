@@ -7,14 +7,14 @@ import { updateUserProfile } from "../redux/actions/profileActions.jsx";
 function EditName() {
   const dispatch = useDispatch();
   const userProfile = useSelector((state) => state.user);
-  const userToken = useSelector((state) => state.login.token); // Déplacez cette ligne ici
+  const userToken = useSelector((state) => state.login.token); 
 
   const [isOpen, setIsOpen] = useState(false);
   const [newUsername, setNewUsername] = useState(userProfile.userName);
 
   const saveChange = (event) => {
     event.preventDefault();
-    dispatch(updateUserProfile(newUsername, userToken)); // Utilisez le token d'authentification ici
+    dispatch(updateUserProfile(newUsername, userToken)); // Utilisez le token d'authentification
     setIsOpen(false);
   };
 

@@ -29,6 +29,7 @@ export const fetchProfileData = () => {
   };
 };
 
+
 export const updateUserProfile = (editedUserName, userToken) => {
   return async (dispatch) => {
     try {
@@ -58,3 +59,4 @@ export const updateUserProfile = (editedUserName, userToken) => {
     }
   };
 };
+console.log(updateUserProfile())

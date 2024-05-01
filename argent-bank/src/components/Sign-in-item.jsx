@@ -5,7 +5,6 @@ import "../styles/index.css";
 
 export default function SigninItem({ className }) {
   const userProfile = useSelector((state)=> state.user)
-  console.log(userProfile)
   const isConnected = useSelector((state) => state.login.isConnected);    // Accéder à l'état d'authentification depuis le store Redux
   const userName = userProfile.userName
   
