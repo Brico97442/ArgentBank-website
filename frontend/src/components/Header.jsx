@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import "../styles/header.css";
 import picture from "../img/argentBankLogo.png";
 import SigninItem from "./Useritem";
 import { setSignIn, setSignOut } from "../redux/slice/userloginSlice";
+import "../styles/header.css";
 
 export function Header() {
   const userConnected = useSelector((state) => state.login.isConnected);

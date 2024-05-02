@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { updateUserProfile } from "../redux/actions/profileActions.jsx";
+
 import Button from "./Button.jsx";
 import "../styles/index.css";
-import { updateUserProfile } from "../redux/actions/profileActions.jsx";
 
 function EditName() {
   const dispatch = useDispatch();
