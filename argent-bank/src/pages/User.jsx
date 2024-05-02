@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProfileData } from "../redux/actions/profileActions";
 import Editnameform from "../components/Edit-name-form";
@@ -9,13 +9,21 @@ import "../styles/transactions.css";
 
 export function User() {
   const dispatch = useDispatch();
-  const userConnected = useSelector((state) => state.login.isConnected); // Récupérer l'état connecté dans le store Redux
+  const userConnected = useSelector((state) => state.login.isConnected);
+
+  //utilisation du debouncing pour s'assurer que l'effet ne se déclenche qu'une seule fois après que l'état userConnected a fini de se stabiliser.
+  const prevUserConnectedRef = useRef();
   
   useEffect(() => {
-    if (userConnected) {
-      dispatch(fetchProfileData()); // Appel de la fonction d'action pour récupérer les données de profil
+    // On vérifie si userConnected a changé depuis la dernière exécution de l'effet
+    if (prevUserConnectedRef.current !== userConnected) {
+      if (userConnected) {
+        dispatch(fetchProfileData());
+      }
+      // On met à jour la valeur précédente
+      prevUserConnectedRef.current = userConnected;
     }
-  }, [dispatch ,userConnected]);
+  }, [dispatch, userConnected]);
   
   return (
     <>
