@@ -1,5 +1,5 @@
 .not-found {
-   color: #2c3e50;
+  color: #2c3e50;
 }
 
 .not-found-container {
@@ -10,12 +10,11 @@
   min-height: 100vh;
 }
 
-
 .not-found-container a {
-    color: #00bc77;
+  color: #00bc77;
 }
 
-.not-found-container h1{
-    font-size: 175px;
-    color: #00bc77;
+.not-found-container h1 {
+  font-size: 175px;
+  color: #00bc77;
 }

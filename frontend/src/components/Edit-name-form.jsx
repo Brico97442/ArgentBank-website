@@ -3,12 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { updateUserProfile } from "../redux/actions/profileActions.jsx";
 
 import Button from "./Button.jsx";
-import "../styles/index.css";
+import "../styles/edit-name.css";
 
 function EditName() {
   const dispatch = useDispatch();
   const userProfile = useSelector((state) => state.user);
-  const userToken = useSelector((state) => state.login.token); 
+  const userToken = useSelector((state) => state.login.token);
 
   const [isOpen, setIsOpen] = useState(false);
   const [newUsername, setNewUsername] = useState(userProfile.userName);
@@ -26,7 +26,7 @@ function EditName() {
           <h1>
             Welcome back
             <br />
-            {userProfile.userName} 
+            {userProfile.userName}
           </h1>
           <Button
             content="Edit Name"

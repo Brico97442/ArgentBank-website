@@ -24,7 +24,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/sign-in" element={<Signin />} />
           <Route path="/user" element={token ? <User /> : <Notfound />} />
-          <Route path="/*" element={ <Notfound />} />
+          <Route path="/*" element={<Notfound />} />
         </Routes>
         <Footer />
       </Router>

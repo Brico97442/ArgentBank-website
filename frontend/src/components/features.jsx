@@ -1,6 +1,7 @@
 import React from "react";
 
-import "../styles/index.css";
+import "../styles/features.css";
+
 import chatIcon from "../img/icon-chat.png";
 import moneyIcon from "../img/icon-money.png";
 import securityIcon from "../img/icon-security.png";

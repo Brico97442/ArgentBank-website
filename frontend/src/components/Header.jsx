@@ -1,16 +1,17 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import picture from "../img/argentBankLogo.png";
-import SigninItem from "./Useritem";
 import { setSignIn, setSignOut } from "../redux/slice/userloginSlice";
+
+import SigninItem from "./Useritem";
+import picture from "../img/argentBankLogo.png";
+
 import "../styles/header.css";
 
 export function Header() {
   const userConnected = useSelector((state) => state.login.isConnected);
   const dispatch = useDispatch(); // màj valeur
-  const token = useSelector((state) => state.login.token);    // Utilisation de useSelector pour récupérer le State du token dans redux 
-
+  const token = useSelector((state) => state.login.token); // Utilisation de useSelector pour récupérer le State du token dans redux
 
   //* Deconnection utilisateur
   const userSignOut = () => {
@@ -21,7 +22,7 @@ export function Header() {
     if (token) {
       dispatch(setSignIn({ token })); // connecter l'utilisateur
     }
-  }, [dispatch,token]);
+  }, [dispatch, token]);
 
   return (
     <header className="header">

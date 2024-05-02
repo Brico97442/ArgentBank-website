@@ -1,11 +1,10 @@
-
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { login } from "../redux/actions/loginActions";
 import { useNavigate } from "react-router-dom";
 
 import Button from "./Button";
-import "../styles/index.css";
+import "../styles/login-form.css";
 
 export function LoginForm() {
   const dispatch = useDispatch();
@@ -19,8 +18,8 @@ export function LoginForm() {
   const submit = async (event) => {
     event.preventDefault();
     try {
-      await dispatch(login(email, password, "/User"));     // Appel de l'action login avec l'email, le mot de passe et l'URL de redirection
-      navigate("/User");                                   //Redirection de l'utilisateur vers la page user
+      await dispatch(login(email, password, "/User")); // Appel de l'action login avec l'email, le mot de passe et l'URL de redirection
+      navigate("/User"); //Redirection de l'utilisateur vers la page user
     } catch (error) {
       setErrorMessage(error.message);
     }

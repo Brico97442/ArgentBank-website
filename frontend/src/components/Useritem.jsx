@@ -1,7 +1,5 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import "../styles/sign-in-item.css";
-import "../styles/index.css";
 
 export default function SigninItem({ className }) {
   const userProfile = useSelector((state)=> state.user)
