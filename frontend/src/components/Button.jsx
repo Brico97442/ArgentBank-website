@@ -2,10 +2,10 @@ import React from "react";
 
 import "../styles/banner.css";
 
-export function Button({content,btnClass,event,onClick}) {
+export function Button({ content, btnClass, event, onClick }) {
   return (
     <button type="submit" className={btnClass} onClick={onClick} event={event}>
-        {content}
+      {content}
     </button>
   );
 }
