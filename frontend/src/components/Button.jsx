@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../styles/banner.css";
+import "../styles/button.css";
 
 export function Button({ content, btnClass, event, onClick }) {
   return (

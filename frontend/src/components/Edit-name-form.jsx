@@ -77,12 +77,14 @@ function EditName() {
                   width="88px"
                   height="40px"
                   type="submit"
+                  btnClass="saveandcancel-button"
                 />
                 <Button
                   content="Cancel"
                   onClick={() => {
                     setIsOpen(false);
                   }}
+                  btnClass="saveandcancel-button"
                 />
               </div>
             </form>
