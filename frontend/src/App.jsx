@@ -9,7 +9,7 @@ import Signin from "./pages/Sign-in.jsx";
 import User from "./pages/User.jsx";
 import Notfound from "./pages/Notfound.jsx";
 
-import "./styles/index.css";
+import "./styles/index.minify.css";
 
 export default App;
 

@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../styles/features.css";
+import "../styles/features.minify.css";
 
 import chatIcon from "../img/icon-chat.png";
 import moneyIcon from "../img/icon-money.png";

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { updateUserProfile } from "../redux/actions/profileActions.jsx";
 
 import Button from "./Button.jsx";
-import "../styles/edit-name.css";
+import "../styles/edit-name.minify.css";
 
 function EditName() {
   const dispatch = useDispatch();

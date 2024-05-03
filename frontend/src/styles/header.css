@@ -25,6 +25,12 @@
   padding: 5px 20px;
 }
 
+@media (max-width: 375px) {
+  .main-nav {
+   flex-direction: column;
+  }
+}
+
 .main-nav p {
   margin: 0;
 }

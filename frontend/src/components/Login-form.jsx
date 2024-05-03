@@ -4,7 +4,7 @@ import { login } from "../redux/actions/loginActions";
 import { useNavigate } from "react-router-dom";
 
 import Button from "./Button";
-import "../styles/login-form.css";
+import "../styles/login-form.minify.css";
 
 export function LoginForm() {
   const dispatch = useDispatch();

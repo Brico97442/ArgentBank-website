@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../styles/notfound.css";
+import "../styles/notfound.minify.css";
 
 export function Notfound() {
   return (

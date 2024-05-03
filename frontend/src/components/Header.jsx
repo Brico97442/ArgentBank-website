@@ -6,7 +6,7 @@ import { setSignIn, setSignOut } from "../redux/slice/userloginSlice";
 import SigninItem from "./Useritem";
 import picture from "../img/argentBankLogo.png";
 
-import "../styles/header.css";
+import "../styles/header.minify.css";
 
 export function Header() {
   const userConnected = useSelector((state) => state.login.isConnected);

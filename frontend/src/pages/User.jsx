@@ -4,7 +4,7 @@ import { fetchProfileData } from "../redux/actions/profileActions";
 import Editnameform from "../components/Edit-name-form";
 
 import Button from "../components/Button";
-import "../styles/user.css";
+import "../styles/user.minify.css";
 
 export function User() {
   const dispatch = useDispatch();

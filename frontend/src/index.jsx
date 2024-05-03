@@ -7,7 +7,7 @@ import App from "./App.jsx"
 
 import reportWebVitals from "./reportWebVitals.js"
 
-import "./styles/index.css"
+import "./styles/index.minify.css"
 
 const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render(

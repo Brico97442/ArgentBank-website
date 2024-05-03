@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../styles/banner.css";
+import "../styles/banner.minify.css";
 
 export function Banner() {
   return (
