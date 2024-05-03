@@ -3,7 +3,7 @@ import { setProfile, changeUserName } from "../slice/userprofileSlice";
 
 export const fetchProfileData = () => {
   return async (dispatch, getState) => {
-    // Utilisez getState pour accéder à l'état Redux
+    
     const { token } = getState().login; // Accédez au token dans l'état login
     try {
       const response = await axios.post(
@@ -19,7 +19,7 @@ export const fetchProfileData = () => {
       );
       if (response.status === 200) {
         const responseData = response.data;
-        dispatch(setProfile(responseData)); // Met à jour la valeur et déclenche le rendu
+        dispatch(setProfile(responseData)); 
       } else {
         console.error("Error response: ", response.statusText);
       }
@@ -59,4 +59,3 @@ export const updateUserProfile = (editedUserName, userToken) => {
     }
   };
 };
-console.log(updateUserProfile())
