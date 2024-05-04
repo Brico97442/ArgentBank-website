@@ -15,7 +15,7 @@ function EditName() {
 
   const saveChange = (event) => {
     event.preventDefault();
-    dispatch(updateUserProfile(newUsername, userToken)); // Utilisez le token d'authentification
+    dispatch(updateUserProfile(newUsername, userToken));
     setIsOpen(false);
   };
 
