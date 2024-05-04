@@ -10,12 +10,12 @@ const loginSlice = createSlice({
   initialState,
 
   reducers: {
-    // utilisateur connecté
+
     setSignIn(state, action) {
       state.isConnected = true;
-      state.token = action.payload.token; // màj token
+      state.token = action.payload.token;
     },
-    // déconnexion
+
     setSignOut(state) {
       state.isConnected = false;
       state.token = null;
