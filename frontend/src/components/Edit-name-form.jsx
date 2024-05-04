@@ -48,7 +48,6 @@ function EditName() {
                   type="text"
                   required
                   id="username"
-                  // value={newUsername}
                   onChange={(e) => setNewUsername(e.target.value)}
                 />
               </div>
